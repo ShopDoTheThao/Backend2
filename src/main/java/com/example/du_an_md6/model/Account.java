@@ -26,15 +26,15 @@ public class Account {
     private String image;
     @NotEmpty
     private String password;
+
     @NotEmpty
     private String confirmPassword;
-
     @Column(nullable = false)
     @ColumnDefault("false")
     private boolean isDelete;
     @Column(nullable = false)
-    @ColumnDefault("false")
-    private boolean status;
+    @ColumnDefault("true")
+    private boolean status = true;
     @ManyToOne
     @JoinColumn(name = "id_role")
     private Role role;

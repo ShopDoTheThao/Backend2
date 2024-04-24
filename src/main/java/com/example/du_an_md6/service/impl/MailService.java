@@ -71,7 +71,7 @@ public class MailService {
         String text = "Hello, " + name
                 + "\n Please confirm this link to active your account: "+link;
         if (findAccountByEmail(email) == null ){
-            account.setStatus(false);
+            account.setStatus(true);
             accountRepository.save(account);
             MailStructure mailStructure =new MailStructure(subject,text,email);
             sendMail(mailStructure);

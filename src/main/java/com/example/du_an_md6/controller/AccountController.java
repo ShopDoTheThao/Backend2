@@ -64,6 +64,7 @@ public class AccountController {
             user.setConfirmPassword(passwordEncoder.encode(user.getConfirmPassword()));
             Role role_user = roleService.findById(2L);
             user.setRole(role_user);
+            user.setStatus(true);
             addressService.save(user.getAddressDelivery());
             user.setAddressDelivery(addressService.findLast());
             if (mailService.register(user)){
